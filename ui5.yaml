@@ -1,0 +1,20 @@
+specVersion: "4.0"
+metadata:
+  name: orderstatuschng
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+        path:
+        - /resources
+        - /test-resources
+        url: https://ui5.sap.com
+        backend:
+        - path: /sap
+          url: https://vhomkds4ci.sap.rashmir4psap.rashmigroup.com:44300/
+          client: '600'
+          destination: RS4D

@@ -1,0 +1,86 @@
+{
+    "_version": "1.18.0",
+    "sap.app": {
+        "id": "com.rg.sd.osc",
+        "ach": "SD-REP-OSC",
+        "type": "application",
+        "description":"{{appDescription}}",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "orderStatus":{
+                "type": "OData",
+                "uri": "/sap/opu/odata/sap/ZSD_SO_STAUS_CHANGE_SRV/",
+                "settings": {"odataVersion": "2.0"}
+            }
+        }    
+    },
+    "sap.ui": {
+        "fullWidth": true,
+        "technology": "UI5",
+        "deviceTypes":{"desktop": true,"tablet": true,"phone": true},
+        "supportedThemes": ["sap_fiori_3", "sap_fiori_3_dark"]
+    },
+
+    "sap.ui5":{
+        "dependencies": {
+            "minUI5Version":"1.130.0",
+            "libs": {
+                "sap.m":{},
+                "sap.ui.core":{},
+                "sap.ui.layout":{}
+            }
+        },
+
+        "flexEnabled": false,
+        "contentDensities": {"cozy": true,"compact": true},
+        "resources": {
+            "css": [{"uri": "css/style.css"}]
+        },
+    "rootView":{"id": "idRootView","type": "XML","viewName": "com.rg.sd.osc.view.App","async": true},
+     "routing": {
+        "config":{
+            "routerClass": "sap.m.routing.Router","path": "com.rg.sd.osc.view",
+            "viewType": "XML","controlId": "idAppCon","async": true,
+            "controlAggregation": "pages"
+        },
+        "routes":[
+            { "name": "startPage",
+              "pattern": "",
+             "target":"start"
+              }
+        ],
+        "targets": {
+            "start":{
+                "viewId": "idMast",
+                "viewName": "Master",
+                "controlAggregation":"pages"
+                
+            }
+        } 
+     },
+
+     "models": {
+        "ordStatus":{
+            "dataSource": "orderStatus",
+            "preload": false,
+            "type": "sap.ui.model.odata.v2.ODataModel",
+            "settings": {
+                "defaultBindingMode": "TwoWay"
+            }
+        },
+        "i18n":{"preload": true,
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {"bundleName": "i18n/i18n.properties"}
+             }
+     }
+
+    }
+
+
+
+
+}

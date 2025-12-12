@@ -1,0 +1,4 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+controllerName="com.rg.sd.osc.controller.App">
+<App id="idAppCon"></App>
+</mvc:View>

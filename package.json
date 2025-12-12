@@ -1,0 +1,14 @@
+{
+  "name": "orderstatuschng",
+  "version": "1.0.0",
+  "description": "Order Status Change",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pradip",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/ux-ui5-tooling": "^1.19.6"
+  }
+}
