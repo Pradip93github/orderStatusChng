@@ -12,7 +12,6 @@ sap.ui.define(['com/rg/sd/osc/controller/BaseController',
              RadioButtonGroup,RadioButton,JSONModel){
        return BaseController.extend("com.rg.sd.osc.controller.Master",{
           onInit: function(){
-            debugger;
             this.oRouter = this.getOwnerComponent().getRouter();
             this.oRouter.getRoute("startPage").attachMatched(this.harculus, this);
 
@@ -33,7 +32,7 @@ sap.ui.define(['com/rg/sd/osc/controller/BaseController',
           },
 
           onPress: function(){
-            debugger;
+            
               var oTable = this.getView().byId("idTab");
                 if (oTable) {
                   oTable.unbindAggregation("items");
@@ -139,7 +138,7 @@ sap.ui.define(['com/rg/sd/osc/controller/BaseController',
           },
 
           onSave: function(){
-              debugger;
+              
              var sRecords = [];
              var oList = this.getView().byId("idTab");
              var aItems = oList.getItems();
@@ -175,7 +174,7 @@ sap.ui.define(['com/rg/sd/osc/controller/BaseController',
           },
 
           onRadioChange: function(oEvent){
-             debugger;
+             
            var oRadioGroup = oEvent.getSource();
           //  var oRadioGroup = (oRB instanceof sap.m.RadioButton) ? oRB.getParent() : oRB;
            var oContext = oRadioGroup.getBindingContext("ordStatus");
