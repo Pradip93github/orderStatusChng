@@ -39,8 +39,8 @@ sap.ui.define(['com/rg/sd/osc/controller/BaseController',
                 } 
                 var model = this.getView().getModel("ordStatus");
                 model.resetChanges();
-               //  model.invalidate(); 
-               //  model.refresh(true); 
+                model.invalidate(); 
+                model.refresh(true); 
 
             var soNumber = this.getView().byId("idSo").getValue();
              if (!soNumber || soNumber.length === 0) {
@@ -56,14 +56,14 @@ sap.ui.define(['com/rg/sd/osc/controller/BaseController',
                cells:[
                   new Text({ text: "{ordStatus>SODOC}"}),
                   new Text({ text: "{ordStatus>POSNR}"}),
-                  new Text({ text: "{ordStatus>KWMENG}  {ordStatus>MEINS}"}),
                   new Text({ text: "{ordStatus>MATNR}"}),
+                  new Text({ text: "{ordStatus>KWMENG}  {ordStatus>MEINS}"}),
                   new Text({ text: "{ordStatus>RATE}  {ordStatus>CURR}"}),
 
                   new RadioButtonGroup({
                     // id:this.getView().createId("myRadioButtonGroup"),
                     valueState:"Warning",
-                    columns:4,
+                    columns:8,
                     //class:"sapUiMediumMarginBottom",
                     select: this.onRadioChange.bind(this),
                     buttons: [
@@ -97,8 +97,7 @@ sap.ui.define(['com/rg/sd/osc/controller/BaseController',
                      ],
                   });
               
-               // this.getView().byId("idTab").bindAggregation("items",{
-               this.getView().byId("idTab").bindItems({
+               this.getView().byId("idTab").bindAggregation("items",{
                   path: "ordStatus>/SODataSet",
                   template: oItemTemplate,
                   templateShareable: false,
@@ -125,12 +124,10 @@ sap.ui.define(['com/rg/sd/osc/controller/BaseController',
                           MessageBox.error("oops!No record(s) found");
                           return;
                         }
-                        //   this.byId("idTab").getParent().invalidate();
                        }.bind(this)
                    }
                    
                   });
-                  
              }
 
           },

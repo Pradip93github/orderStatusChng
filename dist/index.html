@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script
+         src="https://ui5.sap.com/resources/sap-ui-core.js"
+         data-sap-ui-libs="sap.m"
+         data-sap-ui-theme="sap_fiori_3_dark"
+         data-sap-ui-resourceroots='{
+            "com.rg.sd.osc": "./"
+         }'
+         data-sap-ui-bindingSyntax="complex"
+        ></script>
+        <script>
+            var Ocomp = new sap.ui.core.ComponentContainer({
+            name: 'com.rg.sd.osc',
+            });
+            Ocomp.placeAt("content");
+        </script>
+    </head>
+    <body>
+        <div id="content"></div>
+    </body>
+</html>

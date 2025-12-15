@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/UIComponent"],function(t){return t.extend("com.rg.sd.osc.Component",{metadata:{manifest:"json"},init:function(){t.prototype.init.apply(this);this.getRouter().initialize()},destroy:function(){t.prototype.destroy.apply(this,arguments)}})});
+//# sourceMappingURL=Component.js.map

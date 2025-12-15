@@ -1,0 +1,37 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+controllerName="com.rg.sd.osc.controller.Master">
+<Page title="Sales Order Status Change">
+<Table id="idTab" alternateRowColors="true" growing="true" growingThreshold="20">
+<headerToolbar>
+<OverflowToolbar >
+<content>
+<ToolbarSpacer ></ToolbarSpacer>
+<Label text="Sales Document:-"></Label>
+<Input id="idSo" editable="true" width="100px"></Input>
+<ToolbarSpacer ></ToolbarSpacer>
+<Button text="Press Here" icon="sap-icon://touch" press="onPress"></Button>
+<Button text="Save" icon="sap-icon://save" press="onSave"></Button>
+</content>
+</OverflowToolbar>
+</headerToolbar>
+<infoToolbar>
+<OverflowToolbar >
+<Label text="Wide Range of Sales Documet(s) Details"></Label>
+<Label text="{cust>/custData/KUNNR} {cust>/custData/NAME1}" ></Label>
+</OverflowToolbar>
+</infoToolbar>
+<columns>
+<Column hAlign="Center" vAlign="Middle" width="200px"><ObjectIdentifier title="Sales Doc"></ObjectIdentifier></Column>
+<Column hAlign="Center" vAlign="Middle" width="100px"><ObjectIdentifier title="Item No"></ObjectIdentifier></Column>
+<Column hAlign="Center" vAlign="Middle" width="250px"><ObjectIdentifier title="Material"></ObjectIdentifier></Column>
+<Column hAlign="Center" vAlign="Middle" width="180px"><ObjectIdentifier title="Quantity"></ObjectIdentifier></Column>
+<Column hAlign="Center" vAlign="Middle" width="180px"><ObjectIdentifier title="Rate"></ObjectIdentifier></Column>
+<Column hAlign="Center" vAlign="Middle"><ObjectIdentifier title="Current Status"></ObjectIdentifier></Column>
+</columns>
+<items>
+</items>
+</Table>
+ 
+
+</Page>
+</mvc:View>

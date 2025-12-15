@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "4.0"
+metadata:
+  name: orderstatuschng
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: RS4D300
+          url: http://rashmidev.com:430/
+          client: '300'
+        app:
+          name: ZZORDERSTATUS
+          description: Sales order status change
+          package: ZRASHMI
+          transport: DS4K901967
+        exclude:
+          - /test/
